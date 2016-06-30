@@ -1,0 +1,15 @@
+.idea
+media/
+
+settings/vladimir.py
+
+*.pyc
+*.sublime-project
+*.sublime-workspace
+.DS_Store
+*.swp
+*.swo
+
+
+flask-marshmallow/
+flask-script/

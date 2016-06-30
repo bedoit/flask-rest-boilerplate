@@ -1,0 +1,33 @@
+# -*- coding: utf-8 -*-
+# vi: set ft=python :
+import flask
+import konch
+from app import app
+from init.database import db
+
+from packages.auth import models as auth_models
+
+konch.config({
+    'shell': 'ipython',
+    'ipy_autoreload': True,
+    'ipy_extensions': [
+        'autoreload'
+    ],
+    'context': {
+        'request': flask.request,
+        'app': app,
+        'db': db,
+        'auth_models': auth_models
+    }
+})
+
+
+ctx = app.app_context()
+
+
+def setup():
+    ctx.push()
+
+
+def teardown():
+    ctx.pop()
